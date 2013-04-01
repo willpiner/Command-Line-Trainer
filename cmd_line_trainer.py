@@ -1,3 +1,4 @@
+import sys
 # questions
 basic_questions = [
   ["Change into a directory called 'cats'","cd cats"],
@@ -18,11 +19,14 @@ apt_questions = [
 ]
 
 # Starting prompt
-print "\n" * 5
-print "Welcome to the Command Line Trainer!"
-print "\nWhat quiz would you like to take today?\n"
-print "Press 1 to take the basic Unix commands quiz."
-print "Press 2 to take the Apt package manager commands quiz."
+
+print """
+Welcome to the Command Line Trainer!
+What quiz would you like to take today?
+Press 1 to take the basic Unix commands quiz.
+Press 2 to take the Apt package manager commands quiz.
+"""
+
 user_selects = raw_input("> ")
 
 # Quiz selector
@@ -36,17 +40,22 @@ for question in questions:
     prompt = questions[i][0]
     correct_answer = questions[i][1]
     print prompt
-    user_answer = raw_input("> ") 
-    if user_answer == correct_answer:
-        print "Correct\n"
+    user_input = raw_input("> ") 
+    if user_input == correct_answer:
+        print "\nCorrect!\n"
         i+=1
         continue
+    elif user_input == "exit" or user_input == "quit":
+        sys.exit()
     else:
-        print "Wrong\n"
+        print "\nWrong!\n"
         i+=1
         continue
-   
+
 #future updates:
+    #add how to compile
+    #add how to add ubuntu ppa repository
+    #rewrite in ruby
     #add hints
     #randomize questions
     #more questions
