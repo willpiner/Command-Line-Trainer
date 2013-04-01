@@ -55,7 +55,6 @@ for question in questions:
 #future updates:
     #add how to compile
     #add how to add ubuntu ppa repository
-    #rewrite in ruby
     #add hints
     #randomize questions
     #more questions
